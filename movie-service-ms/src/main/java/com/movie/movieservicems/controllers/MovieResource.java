@@ -47,7 +47,7 @@ public class MovieResource {
         return ms.createMovie(movie);
     }
 
-    // Interacting with Multiplex Service at Port 8082
+    // Interacting with Multiplex Service
     @GetMapping("/multiplex")
     public MultiplexList getMultiplexes(){
         return restTemplate.getForObject(
