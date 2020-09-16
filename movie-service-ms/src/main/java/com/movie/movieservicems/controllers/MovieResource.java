@@ -2,6 +2,7 @@ package com.movie.movieservicems.controllers;
 
 import com.movie.movieservicems.models.Movie;
 import com.movie.movieservicems.models.MovieList;
+import com.movie.movieservicems.models.Multiplex;
 import com.movie.movieservicems.models.MultiplexList;
 import com.movie.movieservicems.services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,6 @@ public class MovieResource {
     @Autowired
     MovieService ms;
 
-    // Interacting with Multiplex Service at Port 8082
-    @GetMapping("/multiplex")
-    public MultiplexList getMultiplexes(){
-        return restTemplate.getForObject(
-               "http://multiplex-service/multiplex", MultiplexList.class);
-    }
 
     @ResponseBody
     @GetMapping(value = "/movie")
@@ -46,5 +41,29 @@ public class MovieResource {
         return ms.getMovieByName(name);
     }
 
+    @ResponseBody
+    @PostMapping(value = "/movie")
+    public Movie createMovie(@RequestBody Movie movie){
+        return ms.createMovie(movie);
+    }
+
+    // Interacting with Multiplex Service at Port 8082
+    @GetMapping("/multiplex")
+    public MultiplexList getMultiplexes(){
+        return restTemplate.getForObject(
+                "http://multiplex-service/multiplex", MultiplexList.class);
+    }
+
+    @GetMapping("/multiplex/{id}")
+    public Multiplex getMultiplexById(@PathVariable int id){
+        return restTemplate.getForObject(
+                "http://multiplex-service/multiplex/" + id, Multiplex.class);
+    }
+
+    @PostMapping("/multiplex")
+    public Multiplex createMultiplex(@RequestBody Multiplex multiplex){
+        return restTemplate.postForObject(
+                "http://multiplex-service/multiplex/", multiplex, Multiplex.class);
+    }
 
 }

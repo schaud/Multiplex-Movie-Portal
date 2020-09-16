@@ -28,4 +28,9 @@ public class MultiplexService implements MultiplexServiceI {
     public Multiplex getMultiplexById(int id) {
         return mr.findById(id);
     }
+
+    @Override
+    public Multiplex createMultiplex(Multiplex multiplex) {
+        return mr.save(multiplex);
+    }
 }

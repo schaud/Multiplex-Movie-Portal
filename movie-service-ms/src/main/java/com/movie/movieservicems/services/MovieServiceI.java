@@ -8,4 +8,6 @@ public interface MovieServiceI {
     MovieList getAllMovies();
     Movie getMovieById(int id);
     Movie getMovieByName(String name);
+    Movie createMovie(Movie movie);
+
 }

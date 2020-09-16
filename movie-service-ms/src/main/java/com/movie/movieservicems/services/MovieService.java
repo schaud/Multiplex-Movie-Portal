@@ -33,4 +33,9 @@ public class MovieService implements MovieServiceI {
     public Movie getMovieByName(String name) {
         return mr.findByName(name);
     }
+
+    @Override
+    public Movie createMovie(Movie movie) {
+        return mr.save(movie);
+    }
 }

@@ -7,5 +7,6 @@ import com.movie.multiplexservicems.models.MultiplexList;
 public interface MultiplexServiceI {
      MultiplexList getAllMultiplexes();
      Multiplex getMultiplexById(int id);
+     Multiplex createMultiplex(Multiplex multiplex);
 
 }
