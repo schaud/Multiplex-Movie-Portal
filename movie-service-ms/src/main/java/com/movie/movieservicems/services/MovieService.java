@@ -38,4 +38,9 @@ public class MovieService implements MovieServiceI {
     public Movie createMovie(Movie movie) {
         return mr.save(movie);
     }
+
+    @Override
+    public void deleteMovie(int id) {
+        mr.delete(mr.findById(id));
+    }
 }

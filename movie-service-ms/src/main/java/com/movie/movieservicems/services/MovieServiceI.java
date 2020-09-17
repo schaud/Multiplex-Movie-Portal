@@ -9,5 +9,6 @@ public interface MovieServiceI {
     Movie getMovieById(int id);
     Movie getMovieByName(String name);
     Movie createMovie(Movie movie);
+    void deleteMovie(int id);
 
 }
