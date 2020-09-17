@@ -1,31 +1,30 @@
-package com.movie.multiplexservicems.models;
+package com.movie.allocationservicems.models;
 
 import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
 @Data
-@Table(name = "multiplex_movies")
-public class MultiplexMovie {
+@Entity
+@Table(name = "screens")
+public class MovieScreen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     int id;
     @Column(name = "multiplex_id")
     int multiplexId;
+    @Column(name = "multiplex_screen_id")
+    int multiplexScreenId;
     @Column(name = "movie")
     String movie;
 
-    public int getMultiplexId() {
-        return multiplexId;
-    }
-
     @Override
     public String toString() {
-        return "MultiplexMovie{" +
+        return "Screen{" +
                 "id=" + id +
-                ", multiplex_id=" + multiplexId +
+                ", multiplexId=" + multiplexId +
+                ", multiplexScreenId=" + multiplexScreenId +
                 ", movie='" + movie + '\'' +
                 '}';
     }

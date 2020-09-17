@@ -80,7 +80,7 @@ public class MultiplexService implements MultiplexServiceI {
         ArrayList<MultiplexMovie> multiplexMovieListByIdBase = new ArrayList<>();
         List<MultiplexMovie> multiplexMovieListBase = mmr.findAll();
         for (MultiplexMovie movie : multiplexMovieListBase) {
-            if (movie.getMultiplex_id() == id) {
+            if (movie.getMultiplexId() == id) {
                 multiplexMovieListByIdBase.add(movie);
             }
         }

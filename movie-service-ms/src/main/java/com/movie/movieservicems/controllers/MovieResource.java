@@ -98,7 +98,5 @@ public class MovieResource {
          restTemplate.delete("http://multiplex-service/multiplex/movies/" + id);
     }
 
-
-
 }
 

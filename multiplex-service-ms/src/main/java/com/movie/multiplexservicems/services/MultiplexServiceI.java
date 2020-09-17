@@ -5,8 +5,6 @@ import com.movie.multiplexservicems.models.MultiplexList;
 import com.movie.multiplexservicems.models.MultiplexMovie;
 import com.movie.multiplexservicems.models.MultiplexMovieList;
 
-import java.util.Optional;
-
 
 public interface MultiplexServiceI {
 

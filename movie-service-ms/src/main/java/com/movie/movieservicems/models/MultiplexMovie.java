@@ -13,19 +13,19 @@ public class MultiplexMovie {
     @Column(name = "id")
     int id;
     @Column(name = "multiplex_id")
-    int multiplex_id;
+    int multiplexId;
     @Column(name = "movie")
     String movie;
 
-    public int getMultiplex_id() {
-        return multiplex_id;
+    public int getMultiplexId() {
+        return multiplexId;
     }
 
     @Override
     public String toString() {
         return "MultiplexMovie{" +
                 "id=" + id +
-                ", multiplex_id=" + multiplex_id +
+                ", multiplex_id=" + multiplexId +
                 ", movie='" + movie + '\'' +
                 '}';
     }
