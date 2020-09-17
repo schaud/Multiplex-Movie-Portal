@@ -1,4 +1,4 @@
-package com.movie.movieservicems.models;
+package com.movie.allocationservicems.models;
 
 import lombok.Data;
 
@@ -30,4 +30,3 @@ public class MultiplexMovie {
                 '}';
     }
 }
-

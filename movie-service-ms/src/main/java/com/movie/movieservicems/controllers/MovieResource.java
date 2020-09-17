@@ -90,7 +90,7 @@ public class MovieResource {
     @ResponseBody
     @GetMapping(value = "/multiplex/{id}/movies")
     public MultiplexMovieList getAllMoviesInMultiplexById(@PathVariable int id) {
-        return restTemplate.getForObject("http://multiplex-service/multiplex/movies/" + id, MultiplexMovieList.class);
+        return restTemplate.getForObject("http://multiplex-service/multiplex/" + id + "/movies", MultiplexMovieList.class);
     }
 
     @DeleteMapping(value = "/multiplex/movies/{id}")
